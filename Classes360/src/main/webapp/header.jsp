@@ -31,13 +31,15 @@
  	<% response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 	response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
 	response.setHeader("Expires", "0"); // Proxies. %> 
+	
 	<%@include file="connection.jsp"%>
 	
-	<%-- <% Integer useridheder = (Integer) session.getAttribute("usridInSession"); %>
+	<% Integer useridheder = (Integer) session.getAttribute("usridInSession"); %>
+	<% String useremailheader = (String) session.getAttribute("usremailInSession"); %>
     <% 
 	 if(useridheder == null)
-		  response.sendRedirect(request.getContextPath() + "/login.jsp");
-	%> --%>
+		  response.sendRedirect(request.getContextPath() + "/c360Login.jsp");
+	%> 
 <div class="wrapper">
   <header class="main-header">
     <a href="index2.html" class="logo">
@@ -73,7 +75,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Neelam Madam</span>
+              <span class="hidden-xs"><%=useremailheader%></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -111,24 +113,24 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li>
           <a href="adminDeshboard.jsp">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-         <li class="treeview">
+         <li>
           <a href="adminEnquiry.jsp">
             <i class="fa fa-calendar-check-o"></i>
             <span>Inquiry</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="adminAttendance.jsp">
             <i class="fa fa-street-view"></i>
             <span>Attendance</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
             <i class="fa fa-calendar"></i> <span>Schedule</span>
           </a>
@@ -140,29 +142,29 @@
             </span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
             <i class="fa fa-rupee"></i>
             <span>Fees</span>
           </a>
         </li>
-         <li class="treeview">
+         <li>
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Batches</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
             <i class="fa fa-edit"></i> <span>Courses / Syllabus</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
             <i class="fa fa-file-code-o"></i> <span>Downloads</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
             <i class="fa  fa-file-text-o"></i> <span>Study Materials</span>
           </a>

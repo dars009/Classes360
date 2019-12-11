@@ -1,4 +1,4 @@
-package com.classes360.commons;
+package com.classes360.utils;
 
 import org.apache.log4j.Logger;
 

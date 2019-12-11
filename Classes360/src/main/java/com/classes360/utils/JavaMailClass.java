@@ -1,4 +1,4 @@
-package com.classes360.commons;
+package com.classes360.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

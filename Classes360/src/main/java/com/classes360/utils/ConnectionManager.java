@@ -1,4 +1,5 @@
 package com.classes360.utils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -8,15 +9,20 @@ import java.util.Properties;
 
 public class ConnectionManager {
 
-	public static Connection getConnection() throws SQLException, IOException {
+	public static Connection getConnection() {
 		// TODO Auto-generated method stub
-		
+
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		InputStream fis = classLoader.getResourceAsStream("configuration.properties");
 		Properties ptr = new Properties();
-		ptr.load(fis);
-		
-		final String JDBC_DRIVER =ptr.getProperty("dbdriver");
+		try {
+			ptr.load(fis);
+		} catch (IOException e1) {
+			System.out.println("Properties file not found");
+			e1.printStackTrace();
+		}
+
+		final String JDBC_DRIVER = ptr.getProperty("dbdriver");
 		final String DB_URL = ptr.getProperty("dburl");
 		final String User = ptr.getProperty("dbuser");
 		final String Password = ptr.getProperty("dbpass");
@@ -33,7 +39,7 @@ public class ConnectionManager {
 		} catch (SQLException e) {
 			System.out.println("Connection Failed!");
 			e.printStackTrace();
-			throw e;
 		}
+		return null;
 	}
 }
