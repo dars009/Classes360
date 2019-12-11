@@ -1,4 +1,4 @@
-package com.connection.manager;
+package com.classes360.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;

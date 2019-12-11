@@ -98,7 +98,7 @@
 												<td>darshit.rabadiya@gmail.com</td>
 												<td>8866888662</td>
 												<td>Java/J2EE Professionals</td>
-												<td>JBK 29</td>
+												<td>CS 29</td>
 												<td>15000</td>
 											</tr>
 											<tr>
@@ -106,7 +106,7 @@
 												<td>kunal.d@gmail.com</td>
 												<td>8866877777</td>
 												<td>Java/J2EE Expert</td>
-												<td>JBK 29</td>
+												<td>CS 29</td>
 												<td>30000</td>
 											</tr>
 											<tr>
@@ -114,7 +114,7 @@
 												<td>neelam.j@gmail.com</td>
 												<td>8866877977</td>
 												<td>Java/Selenium Expert</td>
-												<td>JBK 25</td>
+												<td>CS 25</td>
 												<td>20000</td>
 											</tr>
 											<tr>
@@ -122,7 +122,7 @@
 												<td>neelam.j@gmail.com</td>
 												<td>8866877977</td>
 												<td>Java/Selenium Professionals</td>
-												<td>JBK 26</td>
+												<td>CS 26</td>
 												<td>30000</td>
 											</tr>
 											<tr>
@@ -130,7 +130,7 @@
 												<td>seema.oswal@gmail.com</td>
 												<td>8866877999</td>
 												<td>Java/Selenium Professionals</td>
-												<td>JBK 29</td>
+												<td>CS 29</td>
 												<td>8000</td>
 											</tr>
 											<tr>
@@ -149,6 +149,7 @@
 												<th>Email</th>
 												<th>Mobile</th>
 												<th>Course</th>
+												<th>Batch</th>
 												<th>Fees</th>
 											</tr>
 										</tfoot>
