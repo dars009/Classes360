@@ -57,7 +57,7 @@ public class LoginController extends HttpServlet {
 						conn = ConnectionManager.getConnection();
 						String getid = "select userid,email from login where email = ?";
 						PreparedStatement stmtp = conn.prepareStatement(getid);
-						stmtp.setString(1, request.getParameter("email"));
+						stmtp.setString(1, EMAIL);
 						ResultSet res = stmtp.executeQuery();
 
 						while (res.next()) {
@@ -76,6 +76,8 @@ public class LoginController extends HttpServlet {
 						logger.debug(e.getMessage(), e);
 					} finally {
 						pst.close();
+						conn.close();
+						rs = null;
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -88,9 +90,6 @@ public class LoginController extends HttpServlet {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-		} finally {
-			conn = null;
-			rs = null;
-		}
+		} 
 	}
 }
