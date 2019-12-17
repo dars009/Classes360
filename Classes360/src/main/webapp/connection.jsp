@@ -5,7 +5,7 @@
 <html>
 <body>
 <sql:setDataSource var="webappDataSource" driver="com.mysql.jdbc.Driver"
-				   url="jdbc:mysql://localhost:3306/class360" 
+				   url="jdbc:mysql://localhost:3306/classes360" 
 				   user="root"	
 				   password="root"/>
 <c:set var="webappDataSource" scope="request"  />

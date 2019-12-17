@@ -21,7 +21,8 @@
 				<!-- Custom Tabs -->
 				<div class="nav-tabs-custom">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#tab_1" data-toggle="tab">All Enquiries</a></li>
+						<li class="active"><a href="#tab_1" data-toggle="tab">All
+								Enquiries</a></li>
 						<li><a href="#tab_2" data-toggle="tab">Detail Enquiry</a></li>
 					</ul>
 
@@ -30,7 +31,7 @@
 
 						<div class="tab-pane active" id="tab_1">
 							<div class="row">
-								
+
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Date:</label>
@@ -56,7 +57,8 @@
 									<div class="form-group">
 										<label>Get Inquiries</label>
 										<button type="button"
-											class="btn btn-block btn-success btn-flat">Get Inquiries !</button>
+											class="btn btn-block btn-success btn-flat">Get
+											Inquiries !</button>
 									</div>
 								</div>
 							</div>
@@ -66,6 +68,12 @@
 								<!-- <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
             </div> -->
+
+
+				<sql:query dataSource="${webappDataSource}" var="result">
+					SELECT * FROM enquiry;
+				</sql:query>
+
 								<!-- /.box-header -->
 								<div class="box-body">
 									<table id="example1" class="table table-bordered table-striped">
@@ -74,75 +82,33 @@
 												<th>Student</th>
 												<th>Email</th>
 												<th>Mobile</th>
-												<th>Course</th>
-												<th>Handle By</th>
+												<th>City</th>
+												<th>Pin</th>
 												<th>Details</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>Darshit Rabadiya</td>
-												<td>darshit.rabadiya@gmail.com</td>
-												<td>8866888662</td>
-												<td>Java/J2EE Professionals</td>
-												<td>Seema</td>
-												<td><button type="button"
-											class="btn btn-block btn-warning btn-flat btn-xs">Detail !</button></td>
-											</tr>
-											<tr>
-												<td>Kunal Deshkar</td>
-												<td>kunal.d@gmail.com</td>
-												<td>8866877777</td>
-												<td>Java/J2EE Expert</td>
-												<td>Seema</td>
-												<td><button type="button"
-											class="btn btn-block btn-warning btn-flat btn-xs">Detail !</button></td>
-											</tr>
-											<tr>
-												<td>Neelam Joshi</td>
-												<td>neelam.j@gmail.com</td>
-												<td>8866877977</td>
-												<td>Java/Selenium Expert</td>
-												<td>Seema</td>
-												<td><button type="button"
-											class="btn btn-block btn-warning btn-flat btn-xs">Detail !</button></td>
-											</tr>
-											<tr>
-												<td>Neelam Joshi</td>
-												<td>neelam.j@gmail.com</td>
-												<td>8866877977</td>
-												<td>Java/Selenium Professionals</td>
-												<td>Varsha</td>
-												<td><button type="button"
-											class="btn btn-block btn-warning btn-flat btn-xs">Detail !</button></td>
-											</tr>
-											<tr>
-												<td>Seema Oshwal</td>
-												<td>seema.oswal@gmail.com</td>
-												<td>8866877999</td>
-												<td>Java/Selenium Professionals</td>
-												<td>Varsha</td>
-												<td><button type="button"
-											class="btn btn-block btn-warning btn-flat btn-xs">Detail !</button></td>
-											</tr>
-											<tr>
-												<td>Kiran D</td>
-												<td>kiran.d@gmail.com</td>
-												<td>8866844999</td>
-												<td>Java/Selenium Professionals</td>
-												<td>Varsha</td>
-												<td><button type="button"
-											class="btn btn-block btn-warning btn-flat btn-xs">Detail !</button></td>
-											</tr>
-
+											<c:forEach var="enquiry" items="${result.rows}">
+												<tr>
+													<td>${enquiry.stufirstname}</td>
+													<td>${enquiry.stuemail}</td>
+													<td>${enquiry.stumobile}</td>
+													<td>${enquiry.stuaddress}</td>
+													<td>${enquiry.stupin}</td>
+													<td><button type="button" value="${enquiry.enquiryid}"
+															class="btn btn-block btn-warning btn-flat btn-xs">Detail
+															!</button></td>
+												</tr>
+											</c:forEach>
 										</tbody>
 										<tfoot>
 											<tr>
 												<th>Student</th>
 												<th>Email</th>
 												<th>Mobile</th>
-												<th>Course</th>
-												<th>Handle By</th>
+												<th>City</th>
+												<th>Pin</th>
+												<th>Details</th>
 											</tr>
 										</tfoot>
 									</table>
