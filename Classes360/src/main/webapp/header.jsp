@@ -143,7 +143,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="adminFees.jsp">
             <i class="fa fa-rupee"></i>
             <span>Fees</span>
           </a>
